@@ -8,7 +8,8 @@
 ;--------------------------------------------------------
 ; Public variables in this module
 ;--------------------------------------------------------
-	.globl _externalInterrupt0
+	.globl _timer0ISR
+	.globl _external0ISR
 	.globl _main
 	.globl _MOSI
 	.globl _P00
@@ -548,7 +549,9 @@ __start__stack:
 	.area HOME    (CODE)
 __interrupt_vect:
 	ljmp	__sdcc_gsinit_startup
-	ljmp	_externalInterrupt0
+	ljmp	_external0ISR
+	.ds	5
+	ljmp	_timer0ISR
 ;--------------------------------------------------------
 ; global & static initialisations
 ;--------------------------------------------------------
@@ -594,17 +597,40 @@ _main:
 	ar0 = 0x00
 ;	main.c:6: while (1) 
 00102$:
+;	main.c:8: P0 = 0x69;P0 = 0x69;
+	mov	_P0,#0x69
+	mov	_P0,#0x69
 ;	main.c:10: }
 	sjmp	00102$
 ;------------------------------------------------------------
-;Allocation info for local variables in function 'externalInterrupt0'
+;Allocation info for local variables in function 'external0ISR'
 ;------------------------------------------------------------
-;	main.c:12: void externalInterrupt0(void) __interrupt (0)
+;	main.c:12: void external0ISR(void)		__interrupt (0)
 ;	-----------------------------------------
-;	 function externalInterrupt0
+;	 function external0ISR
 ;	-----------------------------------------
-_externalInterrupt0:
+_external0ISR:
+;	main.c:14: P0 = 0x69;
+	mov	_P0,#0x69
 ;	main.c:15: }
+	reti
+;	eliminated unneeded mov psw,# (no regs used in bank)
+;	eliminated unneeded push/pop psw
+;	eliminated unneeded push/pop dpl
+;	eliminated unneeded push/pop dph
+;	eliminated unneeded push/pop b
+;	eliminated unneeded push/pop acc
+;------------------------------------------------------------
+;Allocation info for local variables in function 'timer0ISR'
+;------------------------------------------------------------
+;	main.c:17: void timer0ISR(void)		__interrupt (1)
+;	-----------------------------------------
+;	 function timer0ISR
+;	-----------------------------------------
+_timer0ISR:
+;	main.c:19: P0 = 0x69;
+	mov	_P0,#0x69
+;	main.c:20: }
 	reti
 ;	eliminated unneeded mov psw,# (no regs used in bank)
 ;	eliminated unneeded push/pop psw

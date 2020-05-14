@@ -1,11 +1,7 @@
-#makefile ms51fb9ae
-#Ngo Hung Cuong
-
 CC = sdcc
 PRJ = $(notdir $(CURDIR))
 FLASH_SIZE = 16384
 
-#do not edit
 OBJ_DIR = obj
 
 SRC = main.c
@@ -20,6 +16,6 @@ all: $(OBJS)
 obj/%.rel: %.c
 	$(CC) -c $< -I. -o $@
 
-clean:
-	rm -f obj/*.*
-	rm -f release/$(PRJ).*
+# clean:
+# 	rm -f obj/*.*
+# 	rm -f release/$(PRJ).*

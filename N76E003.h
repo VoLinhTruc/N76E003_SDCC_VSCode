@@ -1,16 +1,15 @@
-/*--------------------------------------------------------------------------
-ms51.h
+/*
+	N76E003 definition
+*/
 
-Header file for Nuvoton ms51
---------------------------------------------------------------------------*/
-#ifndef MS51_H_
-#define MS51_H_
-__sfr __at(0x80) P0;//					= 0x80;
-__sfr __at(0x81) SP;//					= 0x81;
-__sfr __at(0x82) DPL;//					= 0x82;
-__sfr __at(0x83) DPH;//					= 0x83;
-__sfr __at(0x84) RCTRIM0;//			= 0x84;
-__sfr __at(0x85) RCTRIM1;//			= 0x85;	
+#ifndef N76E003_H
+#define N76E003_H
+__sfr __at(0x80) P0;//			= 0x80;
+__sfr __at(0x81) SP;//			= 0x81;
+__sfr __at(0x82) DPL;//			= 0x82;
+__sfr __at(0x83) DPH;//			= 0x83;
+__sfr __at(0x84) RCTRIM0;//		= 0x84;
+__sfr __at(0x85) RCTRIM1;//		= 0x85;	
 __sfr __at(0x86) RWK;//         = 0x86;
 __sfr __at(0x87) PCON;//        = 0x87;
 
@@ -105,20 +104,20 @@ __sfr __at(0xCF) ADCMPH;//      = 0xCF;
 
 __sfr __at(0xD0) PSW;//         = 0xD0;
 __sfr __at(0xD1) PWMPH;//       = 0xD1;
-__sfr __at(0xD2) PWM0H;//				= 0xD2;
-__sfr __at(0xD3) PWM1H;//				= 0xD3;
-__sfr __at(0xD4) PWM2H;//				= 0xD4;
-__sfr __at(0xD5) PWM3H;//				= 0xD5;
-__sfr __at(0xD6) PNP;//					= 0xD6;
-__sfr __at(0xD7) FBD;//					= 0xD7;
+__sfr __at(0xD2) PWM0H;//		= 0xD2;
+__sfr __at(0xD3) PWM1H;//		= 0xD3;
+__sfr __at(0xD4) PWM2H;//		= 0xD4;
+__sfr __at(0xD5) PWM3H;//		= 0xD5;
+__sfr __at(0xD6) PNP;//			= 0xD6;
+__sfr __at(0xD7) FBD;//			= 0xD7;
 
-__sfr __at(0xD8) PWMCON0;//			= 0xD8;
+__sfr __at(0xD8) PWMCON0;//		= 0xD8;
 __sfr __at(0xD9) PWMPL;//       = 0xD9;
-__sfr __at(0xDA) PWM0L;//				= 0xDA;
-__sfr __at(0xDB) PWM1L;//				= 0xDB;
-__sfr __at(0xDC) PWM2L;//				= 0xDC;
-__sfr __at(0xDD) PWM3L;//				= 0xDD;
-__sfr __at(0xDE) PIOCON0;//			= 0xDE;
+__sfr __at(0xDA) PWM0L;//		= 0xDA;
+__sfr __at(0xDB) PWM1L;//		= 0xDB;
+__sfr __at(0xDC) PWM2L;//		= 0xDC;
+__sfr __at(0xDD) PWM3L;//		= 0xDD;
+__sfr __at(0xDE) PIOCON0;//		= 0xDE;
 __sfr __at(0xDF) PWMCON1;//     = 0xDF;
 
 __sfr __at(0xE0) ACC;//         = 0xE0;
@@ -140,13 +139,13 @@ __sfr __at(0xEE) C2H;//         = 0xEE;
 __sfr __at(0xEF) EIP;//         = 0xEF;
 
 __sfr __at(0xF0) B;//           = 0xF0;
-__sfr __at(0xF1) CAPCON3;//			= 0xF1;
-__sfr __at(0xF2) CAPCON4;//			= 0xF2;
+__sfr __at(0xF1) CAPCON3;//		= 0xF1;
+__sfr __at(0xF2) CAPCON4;//		= 0xF2;
 __sfr __at(0xF3) SPCR;//        = 0xF3;
-__sfr __at(0xF3) SPCR2;//				= 0xF3; //Page1
+__sfr __at(0xF3) SPCR2;//		= 0xF3; //Page1
 __sfr __at(0xF4) SPSR;//        = 0xF4;
 __sfr __at(0xF5) SPDR;//        = 0xF5;
-__sfr __at(0xF6) AINDIDS;//			= 0xF6;
+__sfr __at(0xF6) AINDIDS;//		= 0xF6;
 __sfr __at(0xF7) EIPH;//        = 0xF7;
 
 __sfr __at(0xF8) SCON_1;//      = 0xF8;
@@ -206,7 +205,7 @@ __sbit __at(0xC5) STA;//        = I2CON^5;
 __sbit __at(0xC4) STO;//        = I2CON^4;
 __sbit __at(0xC3) SI;//         = I2CON^3;
 __sbit __at(0xC2) AA;//         = I2CON^2;
-__sbit __at(0xC0) I2CPX;//	= I2CON^0;
+__sbit __at(0xC0) I2CPX;//		= I2CON^0;
 
 /*  IP  */  
 __sbit __at(0xBE) PADC;//       = IP^6;
@@ -246,43 +245,42 @@ __sbit __at(0x99) TI;//         = SCON^1;
 __sbit __at(0x98) RI;//         = SCON^0; 
 
 /*  P1  */     
-__sbit __at(0x97) P17;//	= P1^7;
-__sbit __at(0x96) P16;//	= P1^6;
-__sbit __at(0x96) TXD_1;//	= P1^6; 
-__sbit __at(0x95) P15;//	= P1^5;
-__sbit __at(0x94) P14;//	= P1^4;
-__sbit __at(0x94) SDA;//	= P1^4;    
-__sbit __at(0x93) P13;//	= P1^3;
-__sbit __at(0x93) SCL;//	= P1^3;  
+__sbit __at(0x97) P17;//		= P1^7;
+__sbit __at(0x96) P16;//		= P1^6;
+__sbit __at(0x96) TXD_1;//		= P1^6; 
+__sbit __at(0x95) P15;//		= P1^5;
+__sbit __at(0x94) P14;//		= P1^4;
+__sbit __at(0x94) SDA;//		= P1^4;    
+__sbit __at(0x93) P13;//		= P1^3;
+__sbit __at(0x93) SCL;//		= P1^3;  
 __sbit __at(0x92) P12;//        = P1^2; 
 __sbit __at(0x91) P11;//        = P1^1;
 __sbit __at(0x90) P10;//        = P1^0;
 
 /*  TCON  */
-__sbit __at(0x8F) TF1;//				= TCON^7;
-__sbit __at(0x8E) TR1;//				= TCON^6;
-__sbit __at(0x8D) TF0;//				= TCON^5;
-__sbit __at(0x8C) TR0;//				= TCON^4;
-__sbit __at(0x8B) IE1;//				= TCON^3;
-__sbit __at(0x8A) IT1;//				= TCON^2;
-__sbit __at(0x89) IE0;//				= TCON^1;
-__sbit __at(0x88) IT0;//				= TCON^0;
+__sbit __at(0x8F) TF1;//		= TCON^7;
+__sbit __at(0x8E) TR1;//		= TCON^6;
+__sbit __at(0x8D) TF0;//		= TCON^5;
+__sbit __at(0x8C) TR0;//		= TCON^4;
+__sbit __at(0x8B) IE1;//		= TCON^3;
+__sbit __at(0x8A) IT1;//		= TCON^2;
+__sbit __at(0x89) IE0;//		= TCON^1;
+__sbit __at(0x88) IT0;//		= TCON^0;
 
 /*  P0  */  
-
-__sbit __at(0x87) P07;//				= P0^7;
-__sbit __at(0x87) RXD;//				= P0^7;
-__sbit __at(0x86) P06;//				= P0^6;
-__sbit __at(0x86) TXD;//				= P0^6;
-__sbit __at(0x85) P05;//				= P0^5;
-__sbit __at(0x84) P04;//				= P0^4;
-__sbit __at(0x84) STADC;//				= P0^4;
-__sbit __at(0x83) P03;//				= P0^3;
-__sbit __at(0x82) P02;//				= P0^2;
-__sbit __at(0x82) RXD_1;//				= P0^2;
-__sbit __at(0x81) P01;//				= P0^1;
-__sbit __at(0x81) MISO;//				= P0^1;
-__sbit __at(0x80) P00;//				= P0^0;
-__sbit __at(0x80) MOSI;//				= P0^0;
+__sbit __at(0x87) P07;//		= P0^7;
+__sbit __at(0x87) RXD;//		= P0^7;
+__sbit __at(0x86) P06;//		= P0^6;
+__sbit __at(0x86) TXD;//		= P0^6;
+__sbit __at(0x85) P05;//		= P0^5;
+__sbit __at(0x84) P04;//		= P0^4;
+__sbit __at(0x84) STADC;//		= P0^4;
+__sbit __at(0x83) P03;//		= P0^3;
+__sbit __at(0x82) P02;//		= P0^2;
+__sbit __at(0x82) RXD_1;//		= P0^2;
+__sbit __at(0x81) P01;//		= P0^1;
+__sbit __at(0x81) MISO;//		= P0^1;
+__sbit __at(0x80) P00;//		= P0^0;
+__sbit __at(0x80) MOSI;//		= P0^0;
 
 #endif
