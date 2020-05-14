@@ -8,6 +8,7 @@
 ;--------------------------------------------------------
 ; Public variables in this module
 ;--------------------------------------------------------
+	.globl _externalInterrupt0
 	.globl _main
 	.globl _MOSI
 	.globl _P00
@@ -547,6 +548,7 @@ __start__stack:
 	.area HOME    (CODE)
 __interrupt_vect:
 	ljmp	__sdcc_gsinit_startup
+	ljmp	_externalInterrupt0
 ;--------------------------------------------------------
 ; global & static initialisations
 ;--------------------------------------------------------
@@ -594,6 +596,22 @@ _main:
 00102$:
 ;	main.c:10: }
 	sjmp	00102$
+;------------------------------------------------------------
+;Allocation info for local variables in function 'externalInterrupt0'
+;------------------------------------------------------------
+;	main.c:12: void externalInterrupt0(void) __interrupt (0)
+;	-----------------------------------------
+;	 function externalInterrupt0
+;	-----------------------------------------
+_externalInterrupt0:
+;	main.c:15: }
+	reti
+;	eliminated unneeded mov psw,# (no regs used in bank)
+;	eliminated unneeded push/pop psw
+;	eliminated unneeded push/pop dpl
+;	eliminated unneeded push/pop dph
+;	eliminated unneeded push/pop b
+;	eliminated unneeded push/pop acc
 	.area CSEG    (CODE)
 	.area CONST   (CODE)
 	.area XINIT   (CODE)

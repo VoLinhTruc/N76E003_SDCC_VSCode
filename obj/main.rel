@@ -1,5 +1,5 @@
 XH3
-H 1B areas F0 global symbols
+H 1B areas F1 global symbols
 M main
 O -mmcs51 --model-small
 S _CKEN Def000097
@@ -254,8 +254,8 @@ A PSEG size 0 flags 50 addr 0
 A XSEG size 0 flags 40 addr 0
 A XABS size 0 flags 48 addr 0
 A XISEG size 0 flags 40 addr 0
-A HOME size 6 flags 20 addr 0
-S __sdcc_program_startup Def000003
+A HOME size 9 flags 20 addr 0
+S __sdcc_program_startup Def000006
 A GSINIT0 size 0 flags 20 addr 0
 A GSINIT1 size 0 flags 20 addr 0
 A GSINIT2 size 0 flags 20 addr 0
@@ -264,8 +264,9 @@ A GSINIT4 size 0 flags 20 addr 0
 A GSINIT5 size 0 flags 20 addr 0
 A GSINIT size 0 flags 20 addr 0
 A GSFINAL size 3 flags 20 addr 0
-A CSEG size 2 flags 20 addr 0
+A CSEG size 3 flags 20 addr 0
 S _main Def000000
+S _externalInterrupt0 Def000002
 A CONST size 0 flags 20 addr 0
 A XINIT size 0 flags 20 addr 0
 A CABS size 0 flags 28 addr 0
@@ -281,17 +282,21 @@ T 00 00 00
 R 00 00 00 06
 T 00 00 00
 R 00 00 00 0E
-T 00 00 00 02 00 00
-R 00 00 00 0E 02 04 00 DD
-T 00 00 00 02 00 03
+T 00 00 00 02 00 00 02 00 02
+R 00 00 00 0E 02 04 00 DD 00 07 00 17
+T 00 00 00 02 00 06
 R 00 00 00 16 00 04 00 0E
-T 00 00 03
+T 00 00 06
 R 00 00 00 0E
-T 00 00 03 02 00 00
+T 00 00 06 02 00 00
 R 00 00 00 0E 00 04 00 17
 T 00 00 00
 R 00 00 00 17
 T 00 00 00
 R 00 00 00 17
 T 00 00 00 80 FE
+R 00 00 00 17
+T 00 00 02
+R 00 00 00 17
+T 00 00 02 32
 R 00 00 00 17
